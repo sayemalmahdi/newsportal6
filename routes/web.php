@@ -18,3 +18,35 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Admin Route
+Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+
+
+});
+
+
+
+
+
+//Author Route
+Route::group(['as'=>'author.','prefix'=>'author','namespace'=>'Author','middleware'=>['auth','author']],function(){
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+
+
+});
+
+
+
+
+
+//User Profile Route
+Route::group(['as'=>'user.','prefix'=>'user','namespace'=>'User','middleware'=>['auth','user']],function(){
+	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+
+});
