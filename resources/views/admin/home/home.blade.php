@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title',"Test-Dashboard")
+@section('title',"Admin-Dashboard")
 
 @section('dashboardContent')
 <div id="page-wrapper">
