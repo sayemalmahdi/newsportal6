@@ -11,7 +11,13 @@ class DashboardController extends Controller
     // 	return view('admin.dashboard');
     // }
 
+    // public function index(){
+    // 	return view('admin.home.homeContent');
+    // }
+
     public function index(){
-    	return view('admin.home.homeContent');
+    	return view('admin.home.home');
     }
+
+    
 }
