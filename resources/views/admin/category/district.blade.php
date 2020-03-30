@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title',"ALL-CATEGORY")
+@section('title',"ALL-DISTRICT")
 
 @section('dashboardContent')
 <div class="card pd-20 pd-sm-40">
@@ -8,7 +8,7 @@
 <div class="main-page">
 <!-- <div class="table-wrapper"> -->
   <div class="col-md-8 col-md-offset-2">
-    <h6 class="card-body-title">
+    <h6 class="card-body-title"><!-- District Responsive DataTable -->
       @if ($errors->any())
           <div class="alert alert-danger">
               <ul>
@@ -18,7 +18,6 @@
               </ul>
           </div>
       @endif
-      Category Responsive DataTable
       <a href="#" class="btn btn-sm btn-warning" style="float:right;" data-toggle="modal" data-target="#exampleModal">Add New</a>
     </h6>
   </div>
@@ -28,19 +27,19 @@
 	  <thead>
 	    <tr>
 	      <th class="wd-15p">ID</th>
-          <th class="wd-15p">Category Name</th>
+          <th class="wd-15p">District Name</th>
           <th class="wd-20p">Action</th>
 	    </tr>
 	  </thead>
 	  <tbody>
-	    @foreach($category as $row)
+	    @foreach($district as $row)
             <tr>
               <td>{{ $row->id }}</td>
-              <td>{{ $row->category_name }}</td>
+              <td>{{ $row->district_name }}</td>
               
               <td>
-                <a href="{{ URL::to('admin/edit/category/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
-                <a href="{{ URL::to('admin/delete/category/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                <a href="{{ URL::to('admin/edit/district/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
+                <a href="{{ URL::to('admin/delete/district/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
               </td>
             </tr>  
             @endforeach       
@@ -69,35 +68,20 @@
         </button>
       </div>
       <span>
-        <h3 style="color: darkorange;text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add New Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+        <h3 style="color: darkorange;text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add New District&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
       </span>
-      <!-- @if ($errors->any())
-          <div class="alert alert-danger">
-              <ul>
-                  @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                  @endforeach
-              </ul>
-          </div>
-      @endif -->
-      <form method="post" action="{{ route('admin.store.category') }}" >
+      <form method="post" action="{{ route('admin.store.district') }}" >
         @csrf
       <div class="modal-body">
         <!-- Bootstrap Form -->
         
             <div class="form-group">
-              <label for="exampleInputEmail1">Category Name</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_name">
-              <small id="emailHelp" class="form-text text-muted">Add a unique category</small>
+              <label for="exampleInputEmail1">District Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="district_name">
+              <small id="emailHelp" class="form-text text-muted">Add a unique district</small>
             </div>
 
-            <!-- <div class="form-group">
-              <label for="exampleInputEmail1">Category Icon</label>
-              <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="category_icon">
-              <small id="emailHelp" class="form-text text-muted">Add a unique icon</small>
-            </div> -->
-        
-        <!-- End Bootstrap Form -->
+           
         </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

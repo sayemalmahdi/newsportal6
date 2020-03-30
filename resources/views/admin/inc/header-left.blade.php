@@ -28,7 +28,7 @@
                 <ul class="treeview-menu">
                   <li><a href="{{ route('admin.categories') }}"><i class="fa fa-angle-right"></i> Category</a></li>
                   <li><a href="grids.html"><i class="fa fa-angle-right"></i> Sub-Category</a></li>
-                  <li><a href="media.html"><i class="fa fa-angle-right"></i> District</a></li>
+                  <li><a href="{{ route('admin.districts') }}"><i class="fa fa-angle-right"></i> District</a></li>
                 </ul>
               </li>
               <li class="treeview">

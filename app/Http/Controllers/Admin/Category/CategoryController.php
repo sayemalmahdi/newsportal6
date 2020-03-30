@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Admin\Category;
+use App\Model\Admin\District;
 use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
@@ -31,7 +32,7 @@ class CategoryController extends Controller
     	$category ->save();
 
     	$notification=array(
-    		'message'=>'Category Inserted Succesfully',
+    		'message'=>'Category Inserted Successfully',
     		'alert-type'=>'success'
     	);
     	return redirect()->back()->with($notification);
@@ -81,6 +82,30 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories')->with($notification);
         } 
     }
+
+    public function district(){
+        $district=District::all();
+        return view('admin.category.district',compact('district'));
+    }
+
+    public function StoreDistrict(Request $request){
+        $validatedData = $request->validate([
+        'district_name' => 'required|unique:districts|max:75',
+        ]);
+
+        
+
+        $district = new District();
+        $district ->district_name=$request->district_name;
+        $district ->save();
+
+        $notification=array(
+            'message'=>'District Inserted Successfully',
+            'alert-type'=>'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
 
 
 

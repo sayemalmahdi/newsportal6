@@ -31,7 +31,9 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('edit/category/{id}','Category\CategoryController@EditCategory');
 	Route::post('update/category/{id}','Category\CategoryController@UpdateCategory');
 
-
+	//DISTRICT CRUD------
+	Route::get('district', 'Category\CategoryController@district')->name('districts');
+	Route::post('store/district','Category\CategoryController@StoreDistrict')->name('store.district');
 
 	
 

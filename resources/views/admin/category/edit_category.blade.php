@@ -10,14 +10,6 @@
 <!-- <div class="table-wrapper"> -->
   <div class="col-md-8 col-md-offset-2">
     <h6 class="card-body-title"><!-- Ediy-Category Responsive DataTable -->
-      <a href="{{ route('admin.categories') }}" class="btn btn-sm btn-warning" style="float:right;">All Category</a>
-    </h6>
-  </div>
-
-<div class="card pd-20 pd-sm-40">
-
-
-    
       @if ($errors->any())
           <div class="alert alert-danger">
               <ul>
@@ -27,6 +19,13 @@
               </ul>
           </div>
       @endif
+      <a href="{{ route('admin.categories') }}" class="btn btn-sm btn-warning" style="float:right;">All Category</a>
+    </h6>
+  </div>
+
+<div class="card pd-20 pd-sm-40">
+
+
     <div style="padding-left: 200px;" class="col-md-8 ">
       <form method="post" action="{{ URL('admin/update/category/'.$category->id) }}" enctype="multipart/form-data">
         @csrf
