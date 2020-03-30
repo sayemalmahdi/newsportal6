@@ -24,40 +24,7 @@ class CategoryController extends Controller
         // 'category_icon' => 'required',
     	]);
 
-        // $data=array();
-        // $data['category_name']=$request->category_name;
-        // DB::table('categories')->insert($data);
-
-
-
-        // $data=array();
-        // $data['category_name']=$request->category_name;
-        // $image=$request->file('category_icon');
-        // if($image) {
-        //     $image_name=date('d-m-y_H_s_i');
-        //     $ext=strtolower($image->getClientOriginalExtension());
-        //     $image_full_name=$image_name.'.'.$ext;
-        //     $upload_path='public/media/category/';
-        //     $image_url=$upload_path.$image_full_name;
-        //     $success=$image->move($upload_path,$image_full_name);
-
-        //     $data['category_icon']=$image_url;
-        //     $category=DB::table('categories')
-        //         ->insert($data);
-        //     $notification=array(
-        //         'message'=>'Category Inserted Succesfully',
-        //         'alert-type'=>'success'
-        //     );
-        // return redirect()->back()->with($notification);
-        // }else{
-        //     $category=DB::table('categories')
-        //         ->insert($data);
-        //     $notification=array(
-        //         'message'=>'Done',
-        //         'alert-type'=>'success'
-        //     );
-        // return redirect()->back()->with($notification);
-        // }
+        
 
     	$category = new Category();
     	$category ->category_name=$request->category_name;
@@ -82,6 +49,37 @@ class CategoryController extends Controller
         );
 
         return redirect()->back()->with($notification);
+    }
+
+    public function EditCategory($id){
+        $category = DB::table('categories')->where('id',$id)->first();
+        return view('admin.category.edit_category',compact('category'));
+    }
+
+    public function UpdateCategory(Request $request,$id){
+        $validatedData = $request->validate([
+        'category_name' => 'required|max:75',
+        ]);
+
+        
+        $data=array();
+        $data['category_name']=$request->category_name;
+        
+        $update=DB::table('categories')->where('id',$id)->update($data);
+
+        if ($update) {
+            $notification=array(
+                'message'=>'Successfully Category Updated',
+                'alert-type'=>'success'
+            );
+        return redirect()->route('admin.categories')->with($notification);
+        }else{
+            $notification=array(
+                'message'=>'Nothing To Updated',
+                'alert-type'=>'success'
+            );
+        return redirect()->route('admin.categories')->with($notification);
+        } 
     }
 
 

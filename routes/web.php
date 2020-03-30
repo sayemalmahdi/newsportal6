@@ -28,6 +28,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('categories', 'Category\CategoryController@category')->name('categories');
 	Route::post('store/category','Category\CategoryController@storecategory')->name('store.category');
 	Route::get('delete/category/{id}','Category\CategoryController@DeleteCategory');
+	Route::get('edit/category/{id}','Category\CategoryController@EditCategory');
+	Route::post('update/category/{id}','Category\CategoryController@UpdateCategory');
 
 
 
