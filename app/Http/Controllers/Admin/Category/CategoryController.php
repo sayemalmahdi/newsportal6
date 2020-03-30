@@ -82,6 +82,13 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories')->with($notification);
         } 
     }
+// Category Start
+
+
+// District Start
+
+
+
 
     public function district(){
         $district=District::all();
@@ -146,11 +153,11 @@ class CategoryController extends Controller
         return redirect()->route('admin.districts')->with($notification);
         } 
     }
+// District End
 
 
 
-
-
+// Sub-Category Start
 
 
     public function subcategories()
@@ -180,10 +187,20 @@ class CategoryController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function DeleteSubCat($id){
+        DB::table('subcategories')->where('id',$id)->delete();
+        $notification = array(
+            'message'=>'Sub-Category Deleted',
+            'alert-type'=>'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
     
 
 
 
-
+// Sub-Category End
     
 }
