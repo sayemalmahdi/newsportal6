@@ -116,6 +116,37 @@ class CategoryController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function EditDistrict($id){
+        $district = DB::table('districts')->where('id',$id)->first();
+        return view('admin.category.edit_district',compact('district'));
+    }
+
+    public function UpdateDistrict(Request $request,$id){
+        $validatedData = $request->validate([
+        'district_name' => 'required|max:75',
+        ]);
+
+        
+        $data=array();
+        $data['district_name']=$request->district_name;
+        
+        $update=DB::table('districts')->where('id',$id)->update($data);
+
+        if ($update) {
+            $notification=array(
+                'message'=>'Successfully District Updated',
+                'alert-type'=>'success'
+            );
+        return redirect()->route('admin.districts')->with($notification);
+        }else{
+            $notification=array(
+                'message'=>'Nothing To Updated',
+                'alert-type'=>'success'
+            );
+        return redirect()->route('admin.districts')->with($notification);
+        } 
+    }
+
 
 
 
