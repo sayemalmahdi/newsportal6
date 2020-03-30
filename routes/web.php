@@ -27,7 +27,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	//CATEGORY CRUD------
 	Route::get('categories', 'Category\CategoryController@category')->name('categories');
 	Route::post('store/category','Category\CategoryController@storecategory')->name('store.category');
-
+	Route::get('delete/category/{id}','Category\CategoryController@DeleteCategory');
 
 
 
