@@ -34,6 +34,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	//DISTRICT CRUD------
 	Route::get('district', 'Category\CategoryController@district')->name('districts');
 	Route::post('store/district','Category\CategoryController@StoreDistrict')->name('store.district');
+	Route::get('delete/district/{id}','Category\CategoryController@DeleteDistrict');
 
 	
 

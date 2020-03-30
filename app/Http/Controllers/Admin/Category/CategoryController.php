@@ -106,6 +106,16 @@ class CategoryController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function DeleteDistrict($id){       
+        DB::table('districts')->where('id',$id)->delete();
+        $notification = array(
+            'message'=>'District Successfully Deleted',
+            'alert-type'=>'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
 
 
 
