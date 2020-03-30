@@ -38,6 +38,11 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('edit/district/{id}','Category\CategoryController@EditDistrict');
 	Route::post('update/district/{id}','Category\CategoryController@UpdateDistrict');
 
+	//SUB-CATEGORY CRUD------
+	Route::get('sub/category', 'Category\CategoryController@subcategories')->name('sub.categories');
+	Route::post('store/subcat','Category\CategoryController@storesubcat')->name('store.subcategory');
+
+	
 	
 
 });
