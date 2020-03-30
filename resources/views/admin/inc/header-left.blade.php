@@ -9,13 +9,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span> Glance<span class="dashboard_text">Newsportal dashboard</span></a></h1>
+            <h1><a class="navbar-brand" href="{{ route('admin.dashboard') }}"><span class="fa fa-area-chart"></span> Glance<span class="dashboard_text">Newsportal dashboard</span></a></h1>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="sidebar-menu">
               <li class="header">MAIN NAVIGATION</li>
               <li class="treeview">
-                <a href="index.html">
+                <a href="{{ route('admin.dashboard') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>
@@ -26,8 +26,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="grids.html"><i class="fa fa-angle-right"></i> Grids</a></li>
-                  <li><a href="media.html"><i class="fa fa-angle-right"></i> Media Css</a></li>
+                  <li><a href="{{ route('admin.categories') }}"><i class="fa fa-angle-right"></i> Category</a></li>
+                  <li><a href="grids.html"><i class="fa fa-angle-right"></i> Sub-Category</a></li>
+                  <li><a href="media.html"><i class="fa fa-angle-right"></i> District</a></li>
                 </ul>
               </li>
               <li class="treeview">

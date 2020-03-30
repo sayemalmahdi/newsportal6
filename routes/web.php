@@ -24,7 +24,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']],function(){
 	Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+	//CATEGORY CRUD------
+	Route::get('categories', 'Category\CategoryController@category')->name('categories');
+	Route::post('store/category','Category\CategoryController@storecategory')->name('store.category');
 
+
+
+
+	
 
 });
 
