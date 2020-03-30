@@ -197,6 +197,37 @@ class CategoryController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function EditSubCat($id){
+        $subcat = DB::table('subcategories')->where('id',$id)->first();
+        $category=DB::table('categories')->get();
+        return view('admin.category.edit_subcategory',compact('subcat','category'));
+    }
+
+    public function UpdateSubCat(Request $request,$id){
+        $validatedData = $request->validate([
+        'subcategory_name' => 'required|max:75',
+        ]);
+
+        $data=array();
+        $data['category_id']=$request->category_id;
+        $data['subcategory_name']=$request->subcategory_name;
+        $update=DB::table('subcategories')->where('id',$id)->update($data);
+
+        if ($update) {
+            $notification = array(
+            'message'=>'Sub-Category Updated',
+            'alert-type'=>'success'
+        );
+            return redirect()->route('admin.sub.categories')->with($notification);
+        }else{
+            $notification = array(
+            'message'=>'Nothing to Updated',
+            'alert-type'=>'error'
+        );
+            return redirect()->route('admin.sub.categories')->with($notification);
+        }
+    }
+
     
 
 

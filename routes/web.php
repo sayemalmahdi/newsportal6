@@ -42,6 +42,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('sub/category', 'Category\CategoryController@subcategories')->name('sub.categories');
 	Route::post('store/subcat','Category\CategoryController@storesubcat')->name('store.subcategory');
 	Route::get('delete/subcategory/{id}','Category\CategoryController@DeleteSubCat');
+	Route::get('edit/subcategory/{id}','Category\CategoryController@EditSubCat');
+	Route::post('update/subcategory/{id}','Category\CategoryController@UpdateSubCat');
 	
 	
 
