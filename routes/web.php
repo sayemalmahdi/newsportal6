@@ -45,6 +45,11 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('edit/subcategory/{id}','Category\CategoryController@EditSubCat');
 	Route::post('update/subcategory/{id}','Category\CategoryController@UpdateSubCat');
 	
+
+	//Testing Datatable------
+	Route::get('simple/table', 'Datatable\DatatableController@simpleTable')->name('simple.table');
+	Route::get('datatable', 'Datatable\DatatableController@datatable')->name('datatable');
+	Route::post('ajax/datatable','Datatable\DatatableController@ajaxDatatable')->name('ajax.datatable');
 	
 
 });
