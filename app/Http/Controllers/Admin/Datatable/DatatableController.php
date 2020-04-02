@@ -14,4 +14,13 @@ class DatatableController extends Controller
         $users=User::all();
     	return view('admin.datatable.simple_table',compact('users'));
     }
+
+    public function datatable()
+    {
+        $users=User::all();
+    	return view('admin.datatable.datatable',compact('users'));
+    }
+
+
+
 }

@@ -9,8 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('public/js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +17,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
+
+    @yield('styles')
+
 </head>
 <body>
     <div id="app">
@@ -55,7 +57,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.datatable') }}">{{ __('Ddatatables') }}</a>
+                        <a class="nav-link" href="{{ route('admin.datatable') }}">{{ __('Datatables') }}</a>
                     </li>
 
                     <li class="nav-item">
@@ -89,5 +91,10 @@
             @yield('content')
         </main>
     </div>
+
+<!-- Scripts -->
+    <script src="{{ asset('public/js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    @yield('javascripts')
 </body>
 </html>
