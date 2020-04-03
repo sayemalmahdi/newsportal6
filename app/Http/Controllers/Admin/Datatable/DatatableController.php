@@ -21,6 +21,14 @@ class DatatableController extends Controller
     	return view('admin.datatable.datatable',compact('users'));
     }
 
+    public function ajaxDatatable()
+    {
+        // $users=User::all();
+        // return view('admin.datatable.ajax_datatable',compact('users'));
+
+        return view('admin.datatable.ajax_datatable');
+    }
+
 
 
 }

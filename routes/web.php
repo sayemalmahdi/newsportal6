@@ -49,7 +49,14 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	//Testing Datatable------
 	Route::get('simple/table', 'Datatable\DatatableController@simpleTable')->name('simple.table');
 	Route::get('datatable', 'Datatable\DatatableController@datatable')->name('datatable');
-	Route::post('ajax/datatable','Datatable\DatatableController@ajaxDatatable')->name('ajax.datatable');
+	Route::get('ajax/datatable','Datatable\DatatableController@ajaxDatatable')->name('ajax.datatable');
+	
+		// Ajax Datatable Start
+			// Route::get('api/v1/customers', 'Datatable\APIController@getUsers')->name('api.customers.index');
+			Route::get('api/v1/users', 'Datatable\APIController@getUsers')->name('api.users.index');
+		// Ajax Datatable End
+	
+
 	
 
 });
