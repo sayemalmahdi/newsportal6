@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title',"ALL-DISTRICT")
+@section('title',"ALL-SUB-DISTRICT")
 
 @section('dashboardContent')
 <div class="card pd-20 pd-sm-40">
@@ -40,7 +40,7 @@
               <td>{{ $row->district_name }}</td>
               
               <td>
-                <a href="{{ URL::to('admin/edit/district/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
+                <a href="{{ URL::to('admin/edit/sub/district/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
                 <a href="{{ URL::to('admin/delete/sub/district/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
               </td>
             </tr>  
