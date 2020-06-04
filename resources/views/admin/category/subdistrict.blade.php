@@ -41,7 +41,7 @@
               
               <td>
                 <a href="{{ URL::to('admin/edit/district/'.$row->id) }}" class="btn btn-sm btn-info">Edit</a>
-                <a href="{{ URL::to('admin/delete/district/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
+                <a href="{{ URL::to('admin/delete/sub/district/'.$row->id) }}" class="btn btn-sm btn-danger" id="delete">Delete</a>
               </td>
             </tr>  
             @endforeach       

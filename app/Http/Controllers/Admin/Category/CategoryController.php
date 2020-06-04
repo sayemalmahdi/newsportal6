@@ -267,6 +267,16 @@ class CategoryController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function DeleteSubDist($id){
+        DB::table('subdistricts')->where('id',$id)->delete();
+        $notification = array(
+            'message'=>'Sub-District Deleted',
+            'alert-type'=>'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
     
 
 
