@@ -29,6 +29,7 @@
                   <li><a href="{{ route('admin.categories') }}"><i class="fa fa-angle-right"></i> Category</a></li>
                   <li><a href="{{ route('admin.sub.categories') }}"><i class="fa fa-angle-right"></i> Sub-Category</a></li>
                   <li><a href="{{ route('admin.districts') }}"><i class="fa fa-angle-right"></i> District</a></li>
+                  <li><a href="{{ route('admin.sub.districts') }}"><i class="fa fa-angle-right"></i> Sub-District</a></li>
                 </ul>
               </li>
               <li class="treeview">

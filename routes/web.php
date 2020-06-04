@@ -44,6 +44,10 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('delete/subcategory/{id}','Category\CategoryController@DeleteSubCat');
 	Route::get('edit/subcategory/{id}','Category\CategoryController@EditSubCat');
 	Route::post('update/subcategory/{id}','Category\CategoryController@UpdateSubCat');
+
+	//SUB-DISTRICT CRUD------
+	Route::get('sub/district', 'Category\CategoryController@subdistricts')->name('sub.districts');
+	Route::post('store/subdist','Category\CategoryController@storesubdist')->name('store.subdist');
 	
 	
 

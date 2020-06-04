@@ -230,8 +230,49 @@ class CategoryController extends Controller
 
     
 
-
-
 // Sub-Category End
+
+
+
+
+
+
+// Sub-District Start
+
+
+    public function subdistricts()
+    {
+        $district=DB::table('districts')->get();
+        $subdist=DB::table('subdistricts')
+               ->join('districts','subdistricts.district_id','districts.id')
+               ->select('subdistricts.*','districts.district_name')
+               ->get();
+        return view('admin.category.subdistrict',compact('district','subdist'));
+    }
+
+    public function storesubdist(Request $request){
+        $validatedData = $request->validate([
+        'district_id' => 'required',
+        'subdistrict_name' => 'required|unique:subdistricts|max:75',
+        ]);
+
+        $data=array();
+        $data['district_id']=$request->district_id;
+        $data['subdistrict_name']=$request->subdistrict_name;
+        DB::table('subdistricts')->insert($data);  
+            $notification=array(
+                'message'=>'Sub-District Inserted',
+                'alert-type'=>'success'
+            );
+        return redirect()->back()->with($notification);
+    }
+
     
+
+
+
+// Sub-District End
+
+
+
 }
