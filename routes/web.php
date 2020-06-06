@@ -52,6 +52,9 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('edit/sub/district/{id}','Category\CategoryController@EditSubDist');
 	Route::post('update/sub/district/{id}','Category\CategoryController@UpdateSubDist');
 
+	//NEWS CRUD------
+	Route::get('add/news', 'News\NewsController@AddNews')->name('add.news');
+	
 	
 
 });

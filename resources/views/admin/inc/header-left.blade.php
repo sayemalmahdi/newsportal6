@@ -32,6 +32,23 @@
                   <li><a href="{{ route('admin.sub.districts') }}"><i class="fa fa-angle-right"></i> Sub-District</a></li>
                 </ul>
               </li>
+
+
+            <li class="treeview">
+                <a href="#">
+                <i class="fa fa-edit"></i>
+                <span>News Components</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+
+                  <li><a href="{{ route('admin.add.news') }}"><i class="fa fa-angle-right"></i> Add News</a></li>
+                  
+                </ul>
+              </li>
+
+
+
               <li class="treeview">
                 <a href="charts.html">
                 <i class="fa fa-pie-chart"></i>
