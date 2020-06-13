@@ -3,8 +3,16 @@
 @section('title',"ADD-NEWS")
 
 @section('dashboardContent')
+<!-- <link rel="stylesheet" href="{{asset('public/admin/backend/css/starlight.css') }}"> -->
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" crossorigin="anonymous"> -->
+
+<link rel="stylesheet" href="{{ asset('public/admin/backend/css') }}/bootstrap-tagsinput.css" crossorigin="anonymous">
+
+
 <div class="card pd-20 pd-sm-40">
-<div id="page-wrapper" style="height: 1500px;">
+<div id="page-wrapper" style="height: 1200px;">
 <div class="main-page">
   <div class="col-md-8 col-md-offset-2">
     <h6 class="card-body-title">
@@ -26,12 +34,14 @@
 	<div class="col-md-12">
 	
 
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-9 col-md-offset-1">
 					<div class="form-three widget-shadow">
 
 
 							<form class="form-horizontal">
-								<div class="form-group">
+								
+
+								<!-- <div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Focused Input</label>
 									<div class="col-sm-8">
 										<input type="text" class="form-control1" id="focusedinput" placeholder="Default Input">
@@ -39,39 +49,256 @@
 									<div class="col-sm-2">
 										<p class="help-block">Your help text!</p>
 									</div>
-								</div>
+								</div> -->
 
 								
 								
-								<div class="form-group">
-    								<!-- <label for="exampleFormControlInput1">Email address</label> -->
+								<!-- <div class="form-group">
+    								
     								<label for="focusedinput" class="col-sm-2 control-label">Testing Input</label>
 
     								<div class="col-sm-8">
     								<input type="email" class="form-control1" id="exampleFormControlInput1" placeholder="name@example.com">
+    								</div>
+
+  								</div> -->
+
+
+
+							<div class="form-group">
+								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">Category</label>
+								<div class="col-sm-5">
+										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
+								<select class="form-control-custom" id="exampleFormControlSelect1">
+			     				 		<option>1</option>
+			      						<option>2</option>
+			      						<option>3</option>
+			      						<option>4</option>
+			      						<option>5</option>
+		    						</select>
+								</div>
+									
+							</div>
+
+
+							<div class="form-group">
+								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">Sub-Category</label>
+								<div class="col-sm-5">
+										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
+								<select class="form-control-custom" id="exampleFormControlSelect1">
+			     				 		<option>1</option>
+			      						<option>2</option>
+			      						<option>3</option>
+			      						<option>4</option>
+			      						<option>5</option>
+		    						</select>
+								</div>
+									
+							</div>
+
+
+
+							<div class="form-group">
+								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">District</label>
+								<div class="col-sm-5">
+										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
+								<select class="form-control-custom" id="exampleFormControlSelect1">
+			     				 		<option>1</option>
+			      						<option>2</option>
+			      						<option>3</option>
+			      						<option>4</option>
+			      						<option>5</option>
+		    						</select>
+								</div>
+									
+							</div>
+
+
+							<div class="form-group">
+								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">Sub-District</label>
+								<div class="col-sm-5">
+										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
+								<select class="form-control-custom" id="exampleFormControlSelect1">
+			     				 		<option>1</option>
+			      						<option>2</option>
+			      						<option>3</option>
+			      						<option>4</option>
+			      						<option>5</option>
+		    						</select>
+								</div>
+									
+							</div>
+
+
+
+
+							<div class="form-group">
+    								<!-- <label for="exampleFormControlInput1">Email address</label> -->
+    						<label for="focusedinput" class="col-sm-3 control-label">Title</label>
+
+    								<div class="col-sm-8">
+    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title">
     							</div>
 
-  								</div>
+  							</div>
 
 
+
+
+  				<div class="form-group">
+    				<!-- <label for="exampleFormControlInput1">Email address</label> -->
+    				<label for="focusedinput" class="col-sm-3 control-label">News Details</label>
+
+    					<div class="col-sm-8">
+    						<!-- <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title"> -->
+
+    						<textarea class="form-control" id="summernote" name="">
+                    
+                   			</textarea>
+    					</div>
+  				</div>
+
+
+
+
+
+
+
+  			<!-- <div class="col-lg-12">
+                <div class="form-group">
+                  <label class="form-control-label">Product Details<span class="tx-danger">*</span></label>
+                   <textarea class="form-control" id="summernote" name="product_details">
+                    
+                   </textarea>
+                </div>  
+            </div> -->
+
+
+
+
+
+
+
+
+  							<div class="form-group">
+    								<!-- <label for="exampleFormControlInput1">Email address</label> -->
+    						<label for="focusedinput" class="col-sm-3 control-label">Video link</label>
+
+    								<div class="col-sm-8">
+    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Video link">
+    							</div>
+
+  							</div>
+
+
+
+
+  							<div class="form-group">
+    								<!-- <label for="exampleFormControlInput1">Email address</label> -->
+    						<label for="focusedinput" class="col-sm-3 control-label">Tags</label>
+
+    								<div class="col-sm-8">
+    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Tags" data-role="tagsinput">
+    							</div>
+
+  							</div>
+
+
+
+
+
+
+
+  							<div class="form-group">
+    								<!-- <label for="exampleFormControlInput1">Email address</label> -->
+    						<label for="focusedinput" class="col-sm-3 control-label">Image</label>
+
+    							<div class="col-sm-8">
+    								<!-- <lebel>Image One (Main Thumbnail) <span class="tx-danger">*</span></lebel> -->
+    								<label class="custom-file">
+    									<!-- <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title"> -->
+    									<input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);" required="" accept="image">
+    									<span class="custom-file-control"></span>
+    								</label>
+    							</div>
+
+  							</div>
+
+
+
+
+
+
+
+
+							<!-- From Multiauth Project -->
+  							<!-- <div class="col-lg-4">
+				                <lebel>Image One (Main Thumbnail) <span class="tx-danger">*</span></lebel>
+				                <label class="custom-file">
+					                <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);" required="" accept="image">
+					                <span class="custom-file-control"></span>
+					                <img src="#" id="one" >
+				              	</label>
+				            </div> -->
+
+
+
+
+  							
+								<div class="form-group">
+									<label for="checkbox" class="col-sm-3 control-label">Top Section Post</label>
+									<div class="col-sm-8">
+
+										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										
+									</div>
+								</div>
 
 								<div class="form-group">
-									<label for="exampleFormControlSelect1" class="col-sm-2 control-label">Testing</label>
+									<label for="checkbox" class="col-sm-3 control-label">Big Thumbnail</label>
 									<div class="col-sm-8">
-										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
-										<select class="form-control-custom" id="exampleFormControlSelect1">
-		     				 		<option>1</option>
-		      						<option>2</option>
-		      						<option>3</option>
-		      						<option>4</option>
-		      						<option>5</option>
-		    					</select>
+										
+										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										
 									</div>
-									
+								</div>
+
+								<div class="form-group">
+									<label for="checkbox" class="col-sm-3 control-label">Small Thumbnail</label>
+									<div class="col-sm-8">
+										
+										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="checkbox" class="col-sm-3 control-label">Notice</label>
+									<div class="col-sm-8">
+										
+										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										
+									</div>
 								</div>
 
 
 								<div class="form-group">
+									<label for="checkbox" class="col-sm-3 control-label">Published</label>
+									<div class="col-sm-8">
+										
+										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										
+									</div>
+								</div>
+
+
+
+
+
+
+
+
+								<!-- <div class="form-group">
 									<label for="disabledinput" class="col-sm-2 control-label">Disabled Input</label>
 									<div class="col-sm-8">
 										<input disabled="" type="text" class="form-control1" id="disabledinput" placeholder="Disabled Input">
@@ -82,7 +309,9 @@
 									<div class="col-sm-8">
 										<input type="password" class="form-control1" id="inputPassword" placeholder="Password">
 									</div>
-								</div>
+								</div> 
+
+							
 								<div class="form-group">
 									<label for="checkbox" class="col-sm-2 control-label">Checkbox</label>
 									<div class="col-sm-8">
@@ -101,6 +330,11 @@
 										<div class="checkbox-inline"><label><input type="checkbox" disabled="" checked=""> Disabled Checked</label></div>
 									</div>
 								</div>
+								
+
+
+
+
 								<div class="form-group">
 									<label for="selector1" class="col-sm-2 control-label">Dropdown Select</label>
 									<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
@@ -162,7 +396,18 @@
 										<input type="text" class="form-control1 input-lg" id="largeinput" placeholder="Large Input">
 									</div>
 								</div>
-								<button type="submit" class="btn btn-primary">Submit</button>
+								 -->
+
+
+								
+
+								<br>
+								<div class="col-md-4 col-md-offset-1">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+								<br>
+								
+
 							</form>
 						</div>
 						<br>
@@ -181,7 +426,14 @@
 
 
 
+<!-- For Input Tags field start -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
 
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" crossorigin="anonymous"></script>
+<!-- For Input Tags field end -->
 
 
 

@@ -55,6 +55,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
 
+<link href="{{asset('public/admin/backend/lib/summernote/summernote-bs4.css') }}" rel="stylesheet">
+
+
+
+
+
 <!--//Metis Menu -->
 <style>
 #chartdiv {
@@ -180,6 +186,45 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	<!-- Bootstrap Core JavaScript -->
    <script src="{{ asset('public/admin/backend/js') }}/bootstrap.js"> </script>
 	<!-- //Bootstrap Core JavaScript -->
+
+
+
+
+
+<script src="{{asset('public/admin/backend/lib/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{asset('public/admin/backend/lib/medium-editor/medium-editor.js') }}"></script>
+
+    <script>
+      $(function(){
+        'use strict';
+
+        // Inline editor
+        var editor = new MediumEditor('.editable');
+
+        // Summernote editor
+        $('#summernote').summernote({
+          height: 150,
+          tooltip: false
+        })
+      });
+    </script>
+    <script>
+      $(function(){
+        'use strict';
+
+        // Inline editor
+        var editor = new MediumEditor('.editable');
+
+        // Summernote editor
+        $('#summernote1').summernote({
+          height: 150,
+          tooltip: false
+        })
+      });
+    </script>
+
+
+
 
 
 

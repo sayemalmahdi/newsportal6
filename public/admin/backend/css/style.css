@@ -1507,6 +1507,7 @@ section#tables  p {
   border-radius: 0;
   -webkit-appearance: none;
   resize: none;
+  border-radius: 4px;
 }
 .general .tab-content {
     padding: 1.5em 0.5em 0;
