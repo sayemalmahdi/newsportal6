@@ -37,44 +37,18 @@
 		<div class="col-md-9 col-md-offset-1">
 					<div class="form-three widget-shadow">
 
-
-							<form class="form-horizontal">
-								
-
-								<!-- <div class="form-group">
-									<label for="focusedinput" class="col-sm-2 control-label">Focused Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" id="focusedinput" placeholder="Default Input">
-									</div>
-									<div class="col-sm-2">
-										<p class="help-block">Your help text!</p>
-									</div>
-								</div> -->
-
-								
-								
-								<!-- <div class="form-group">
-    								
-    								<label for="focusedinput" class="col-sm-2 control-label">Testing Input</label>
-
-    								<div class="col-sm-8">
-    								<input type="email" class="form-control1" id="exampleFormControlInput1" placeholder="name@example.com">
-    								</div>
-
-  								</div> -->
-
-
+						<form action="{{ route('admin.store.news') }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+            					@csrf
 
 							<div class="form-group">
 								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">Category</label>
 								<div class="col-sm-5">
 										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
-								<select class="form-control-custom" id="exampleFormControlSelect1">
-			     				 		<option>1</option>
-			      						<option>2</option>
-			      						<option>3</option>
-			      						<option>4</option>
-			      						<option>5</option>
+									<select class="form-control-custom" id="exampleFormControlSelect1" name="cat_id" data-placeholder="Choose Category">
+										<option label="Choose Category"></option>
+										@foreach($category as $row)
+				     				 		<option value="{{ $row->id }}">{{ $row->category_name }}</option>
+				      					@endforeach
 		    						</select>
 								</div>
 									
@@ -85,12 +59,8 @@
 								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">Sub-Category</label>
 								<div class="col-sm-5">
 										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
-								<select class="form-control-custom" id="exampleFormControlSelect1">
-			     				 		<option>1</option>
-			      						<option>2</option>
-			      						<option>3</option>
-			      						<option>4</option>
-			      						<option>5</option>
+								<select class="form-control-custom" id="exampleFormControlSelect1" name="subcat_id">
+			     				 		
 		    						</select>
 								</div>
 									
@@ -102,13 +72,12 @@
 								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">District</label>
 								<div class="col-sm-5">
 										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
-								<select class="form-control-custom" id="exampleFormControlSelect1">
-			     				 		<option>1</option>
-			      						<option>2</option>
-			      						<option>3</option>
-			      						<option>4</option>
-			      						<option>5</option>
-		    						</select>
+									<select class="form-control-custom" id="exampleFormControlSelect1" name="dist_id">
+										<option label="Choose Category"></option>
+										@foreach($district as $row)
+				     				 		<option value="{{ $row->id }}">{{ $row->district_name }}</option>	
+				     				 	@endforeach		      						
+			    					</select>
 								</div>
 									
 							</div>
@@ -118,12 +87,8 @@
 								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">Sub-District</label>
 								<div class="col-sm-5">
 										<!-- <input type="text" class="form-control1" id="focusedinput" placeholder="Default Input"> -->
-								<select class="form-control-custom" id="exampleFormControlSelect1">
-			     				 		<option>1</option>
-			      						<option>2</option>
-			      						<option>3</option>
-			      						<option>4</option>
-			      						<option>5</option>
+								<select class="form-control-custom" id="exampleFormControlSelect1" name="subdist_id">
+			     				 		
 		    						</select>
 								</div>
 									
@@ -137,7 +102,7 @@
     						<label for="focusedinput" class="col-sm-3 control-label">Title</label>
 
     								<div class="col-sm-8">
-    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title">
+    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title" name="title">
     							</div>
 
   							</div>
@@ -145,37 +110,18 @@
 
 
 
-  				<div class="form-group">
-    				<!-- <label for="exampleFormControlInput1">Email address</label> -->
-    				<label for="focusedinput" class="col-sm-3 control-label">News Details</label>
+		  				<div class="form-group">
+		    				<!-- <label for="exampleFormControlInput1">Email address</label> -->
+		    				<label for="focusedinput" class="col-sm-3 control-label">News Details</label>
 
-    					<div class="col-sm-8">
-    						<!-- <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title"> -->
+		    					<div class="col-sm-8">
+		    						<!-- <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title"> -->
 
-    						<textarea class="form-control" id="summernote" name="">
-                    
-                   			</textarea>
-    					</div>
-  				</div>
-
-
-
-
-
-
-
-  			<!-- <div class="col-lg-12">
-                <div class="form-group">
-                  <label class="form-control-label">Product Details<span class="tx-danger">*</span></label>
-                   <textarea class="form-control" id="summernote" name="product_details">
-                    
-                   </textarea>
-                </div>  
-            </div> -->
-
-
-
-
+		    						<textarea class="form-control" id="summernote" name="details">
+		                    
+		                   			</textarea>
+		    					</div>
+		  				</div>
 
 
 
@@ -185,7 +131,7 @@
     						<label for="focusedinput" class="col-sm-3 control-label">Video link</label>
 
     								<div class="col-sm-8">
-    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Video link">
+    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Video link" name="video_link">
     							</div>
 
   							</div>
@@ -198,7 +144,7 @@
     						<label for="focusedinput" class="col-sm-3 control-label">Tags</label>
 
     								<div class="col-sm-8">
-    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Tags" data-role="tagsinput">
+    								<input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Tags" data-role="tagsinput" name="tags">
     							</div>
 
   							</div>
@@ -217,8 +163,9 @@
     								<!-- <lebel>Image One (Main Thumbnail) <span class="tx-danger">*</span></lebel> -->
     								<label class="custom-file">
     									<!-- <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title"> -->
-    									<input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);" required="" accept="image">
+    								<input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);" required="" accept="image">
     									<span class="custom-file-control"></span>
+    									<img src="#" id="one" >
     								</label>
     							</div>
 
@@ -230,35 +177,32 @@
 
 
 
-
-							<!-- From Multiauth Project -->
-  							<!-- <div class="col-lg-4">
-				                <lebel>Image One (Main Thumbnail) <span class="tx-danger">*</span></lebel>
-				                <label class="custom-file">
-					                <input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);" required="" accept="image">
-					                <span class="custom-file-control"></span>
-					                <img src="#" id="one" >
-				              	</label>
-				            </div> -->
-
-
-
-
   							
 								<div class="form-group">
 									<label for="checkbox" class="col-sm-3 control-label">Top Section Post</label>
 									<div class="col-sm-8">
 
-										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										<div class="checkbox-inline">
+											<label>
+												<input type="checkbox" name="top_section" value="1">&nbsp;
+											</label>
+										</div>
 										
 									</div>
 								</div>
+
+								
+
 
 								<div class="form-group">
 									<label for="checkbox" class="col-sm-3 control-label">Big Thumbnail</label>
 									<div class="col-sm-8">
 										
-										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										<div class="checkbox-inline">
+											<label>
+												<input type="checkbox" name="big_thumbnail" value="1">&nbsp;
+											</label>
+										</div>
 										
 									</div>
 								</div>
@@ -267,7 +211,11 @@
 									<label for="checkbox" class="col-sm-3 control-label">Small Thumbnail</label>
 									<div class="col-sm-8">
 										
-										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										<div class="checkbox-inline">
+											<label>
+												<input type="checkbox" name="small_thumbnail" value="1">&nbsp;
+											</label>
+										</div>
 										
 									</div>
 								</div>
@@ -276,7 +224,11 @@
 									<label for="checkbox" class="col-sm-3 control-label">Notice</label>
 									<div class="col-sm-8">
 										
-										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										<div class="checkbox-inline">
+											<label>
+												<input type="checkbox" name="notice" value="1">&nbsp;
+											</label>
+										</div>
 										
 									</div>
 								</div>
@@ -286,118 +238,14 @@
 									<label for="checkbox" class="col-sm-3 control-label">Published</label>
 									<div class="col-sm-8">
 										
-										<div class="checkbox-inline"><label><input type="checkbox">&nbsp;</label></div>
+										<div class="checkbox-inline">
+											<label>
+												<input type="checkbox" name="published" value="1">&nbsp;
+											</label>
+										</div>
 										
 									</div>
 								</div>
-
-
-
-
-
-
-
-
-								<!-- <div class="form-group">
-									<label for="disabledinput" class="col-sm-2 control-label">Disabled Input</label>
-									<div class="col-sm-8">
-										<input disabled="" type="text" class="form-control1" id="disabledinput" placeholder="Disabled Input">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="inputPassword" class="col-sm-2 control-label">Password</label>
-									<div class="col-sm-8">
-										<input type="password" class="form-control1" id="inputPassword" placeholder="Password">
-									</div>
-								</div> 
-
-							
-								<div class="form-group">
-									<label for="checkbox" class="col-sm-2 control-label">Checkbox</label>
-									<div class="col-sm-8">
-										<div class="checkbox-inline1"><label><input type="checkbox"> Unchecked</label></div>
-										<div class="checkbox-inline1"><label><input type="checkbox" checked=""> Checked</label></div>
-										<div class="checkbox-inline1"><label><input type="checkbox" disabled=""> Disabled Unchecked</label></div>
-										<div class="checkbox-inline1"><label><input type="checkbox" disabled="" checked=""> Disabled Checked</label></div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="checkbox" class="col-sm-2 control-label">Checkbox Inline</label>
-									<div class="col-sm-8">
-										<div class="checkbox-inline"><label><input type="checkbox"> Unchecked</label></div>
-										<div class="checkbox-inline"><label><input type="checkbox" checked=""> Checked</label></div>
-										<div class="checkbox-inline"><label><input type="checkbox" disabled=""> Disabled Unchecked</label></div>
-										<div class="checkbox-inline"><label><input type="checkbox" disabled="" checked=""> Disabled Checked</label></div>
-									</div>
-								</div>
-								
-
-
-
-
-								<div class="form-group">
-									<label for="selector1" class="col-sm-2 control-label">Dropdown Select</label>
-									<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-										<option>Lorem ipsum dolor sit amet.</option>
-										<option>Dolore, ab unde modi est!</option>
-										<option>Illum, fuga minus sit eaque.</option>
-										<option>Consequatur ducimus maiores voluptatum minima.</option>
-									</select></div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-2 control-label">Multiple Select</label>
-									<div class="col-sm-8">
-										<select multiple="" class="form-control1">
-											<option>Option 1</option>
-											<option>Option 2</option>
-											<option>Option 3</option>
-											<option>Option 4</option>
-											<option>Option 5</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="txtarea1" class="col-sm-2 control-label">Textarea</label>
-									<div class="col-sm-8"><textarea name="txtarea1" id="txtarea1" cols="50" rows="4" class="form-control1"></textarea></div>
-								</div>
-								<div class="form-group">
-									<label for="radio" class="col-sm-2 control-label">Radio</label>
-									<div class="col-sm-8">
-										<div class="radio block"><label><input type="radio"> Unchecked</label></div>
-										<div class="radio block"><label><input type="radio" checked=""> Checked</label></div>
-										<div class="radio block"><label><input type="radio" disabled=""> Disabled Unchecked</label></div>
-										<div class="radio block"><label><input type="radio" disabled="" checked=""> Disabled Checked</label></div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="radio" class="col-sm-2 control-label">Radio Inline</label>
-									<div class="col-sm-8">
-										<div class="radio-inline"><label><input type="radio"> Unchecked</label></div>
-										<div class="radio-inline"><label><input type="radio" checked=""> Checked</label></div>
-										<div class="radio-inline"><label><input type="radio" disabled=""> Disabled Unchecked</label></div>
-										<div class="radio-inline"><label><input type="radio" disabled="" checked=""> Disabled Checked</label></div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="smallinput" class="col-sm-2 control-label label-input-sm">Small Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1 input-sm" id="smallinput" placeholder="Small Input">
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="mediuminput" class="col-sm-2 control-label">Medium Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1" id="mediuminput" placeholder="Medium Input">
-									</div>
-								</div>
-								<div class="form-group mb-n">
-									<label for="largeinput" class="col-sm-2 control-label label-input-lg">Large Input</label>
-									<div class="col-sm-8">
-										<input type="text" class="form-control1 input-lg" id="largeinput" placeholder="Large Input">
-									</div>
-								</div>
-								 -->
-
 
 								
 
@@ -437,4 +285,89 @@
 
 
 
+<!-- subcategory collect by ajax request start -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+         $('select[name="cat_id"]').on('change', function(){
+             var cat_id = $(this).val();
+             if(cat_id) {
+                 $.ajax({
+                     url: "{{  url('/admin/get/subcategory/') }}/"+cat_id,
+                     type:"GET",
+                     dataType:"json",
+                     success:function(data) {
+                        var d =$('select[name="subcat_id"]').empty();
+                           $.each(data, function(key, value){
+
+                               $('select[name="subcat_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name + '</option>');
+
+                           });
+  
+                     },
+                    
+                 });
+             } else {
+                 alert('danger');
+             }
+
+         });
+     });
+
+</script>
+<!-- subcategory collect by ajax request end -->
+
+
+
+
+<!-- subdist collect by ajax request start -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+         $('select[name="dist_id"]').on('change', function(){
+             var dist_id = $(this).val();
+             if(dist_id) {
+                 $.ajax({
+                     url: "{{  url('/admin/get/subdistrict/') }}/"+dist_id,
+                     type:"GET",
+                     dataType:"json",
+                     success:function(data) {
+                        var d =$('select[name="subdist_id"]').empty();
+                           $.each(data, function(key, value){
+
+                               $('select[name="subdist_id"]').append('<option value="'+ value.id +'">' + value.subdistrict_name + '</option>');
+
+                           });
+  
+                     },
+                    
+                 });
+             } else {
+                 alert('danger');
+             }
+
+         });
+     });
+
+</script>
+<!-- subdist collect by ajax request end -->
+
+
+
+<!-- selected image show by ajax request start -->
+<script type="text/javascript">
+  function readURL(input) {
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+          reader.onload = function (e) {
+              $('#one')
+                  .attr('src', e.target.result)
+                  .width(80)
+                  .height(80);
+          };
+          reader.readAsDataURL(input.files[0]);
+      }
+   }
+</script>
+<!-- selected image show by ajax request end -->
 @endsection

@@ -21,7 +21,7 @@ class CreateNewsTabel extends Migration
             $table->integer('subdist_id')->nullable();
             $table->integer('user_id');
             $table->string('title');
-            $table->string('image');
+            $table->string('image_one');
             $table->text('details');
             $table->string('video_link')->nullable();
             $table->string('tags')->nullable();
