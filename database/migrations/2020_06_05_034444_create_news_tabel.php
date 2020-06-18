@@ -17,13 +17,13 @@ class CreateNewsTabel extends Migration
             $table->bigIncrements('id');
             $table->integer('cat_id');
             $table->integer('subcat_id')->nullable();
-            $table->integer('dist_id');
+            $table->integer('dist_id')->nullable();
             $table->integer('subdist_id')->nullable();
             $table->integer('user_id');
             $table->string('title');
             $table->string('image_one');
             $table->text('details');
-            $table->string('video_link')->nullable();
+            $table->text('video_link')->nullable();
             $table->string('tags')->nullable();
             $table->integer('top_section')->nullable();
             $table->integer('big_thumbnail')->nullable();

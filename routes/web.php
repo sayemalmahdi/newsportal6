@@ -55,6 +55,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	//NEWS CRUD------
 	Route::get('add/news', 'News\NewsController@AddNews')->name('add.news');
 	Route::post('store/news', 'News\NewsController@StoreNews')->name('store.news');
+	Route::get('all/news', 'News\NewsController@AllNews')->name('all.news');
+	
 
 	//get sub cate by ajax
 	Route::get('get/subcategory/{cat_id}','News\NewsController@GetSubcat');

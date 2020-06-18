@@ -12,9 +12,9 @@
 
 
 <div class="card pd-20 pd-sm-40">
-<div id="page-wrapper" style="height: 1200px;">
+<div id="page-wrapper" style="height: 1300px;">
 <div class="main-page">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-5 col-md-offset-3">
     <h6 class="card-body-title">
       @if ($errors->any())
           <div class="alert alert-danger">
@@ -26,7 +26,7 @@
           </div>
       @endif
       Add News
-      <a href="#" class="btn btn-sm btn-warning" style="float:right;" data-toggle="modal" data-target="#exampleModal">All News</a>
+      <a href="{{ route('admin.all.news') }}" class="btn btn-sm btn-warning" style="float:right;" >All News</a>
     </h6>
   </div>
 

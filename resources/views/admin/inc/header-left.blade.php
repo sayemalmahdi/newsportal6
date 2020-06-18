@@ -43,6 +43,8 @@
                 <ul class="treeview-menu">
 
                   <li><a href="{{ route('admin.add.news') }}"><i class="fa fa-angle-right"></i> Add News</a></li>
+                  <li><a href="{{ route('admin.all.news') }}"><i class="fa fa-angle-right"></i> All News</a></li>
+                 
                   
                 </ul>
               </li>

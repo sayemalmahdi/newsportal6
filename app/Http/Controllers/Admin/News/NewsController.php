@@ -32,6 +32,16 @@ class NewsController extends Controller
     }
 
     public function StoreNews(Request $request){
+        $validatedData = $request->validate([
+        'cat_id' => 'required',
+        'subcat_id' => 'required',
+        // 'dist_id' => 'required',
+        // 'subdist_id' => 'required',
+        'title' => 'required',
+        'details' => 'required',
+        'image_one' => 'required',
+        ]);
+
         $data=array();
         $data['user_id']=Auth::user()->id;
         $data['cat_id']=$request->cat_id;
@@ -65,11 +75,28 @@ class NewsController extends Controller
                 // return Redirect()->route('admin.all.product')->with($notification);
                 
         }
-        
+    }
 
-        
+   
+
+    public function AllNews(){
+        $news=DB::table('news')
+                ->join('categories','news.cat_id','categories.id')
+                ->join('subcategories','news.subcat_id','subcategories.id')
+                // ->join('districts','news.dist_id','districts.id')
+                // ->join('subdistricts','news.subdist_id','subdistricts.id')
+                // ->select('news.*','categories.category_name','subcategories.subcategory_name','districts.district_name','subdistricts.subdistrict_name')
+                ->select('news.*','categories.category_name','subcategories.subcategory_name')
+                ->orderBy('id', 'desc')
+                ->paginate(10);
+              
+        return view('admin.news.all_news',compact('news'));
 
     }
+    
+
+    
+
 
 
 
