@@ -142,6 +142,13 @@ class NewsController extends Controller
         return view('admin.news.view_news',compact('news'));
 
     }
+
+    public function EditNews($id)
+    {
+        $news=DB::table('news')->where('id',$id)->first();
+
+        return view('admin.news.edit_news',compact('news'));
+    }
     
 
     
