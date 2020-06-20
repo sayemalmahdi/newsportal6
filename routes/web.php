@@ -61,6 +61,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('active/news/{id}', 'News\NewsController@Active');
 	
 	Route::get('delete/news/{id}','News\NewsController@DeleteNews');
+	Route::get('view/news/{id}','News\NewsController@ViewNews');
 
 
 	//get sub cate by ajax

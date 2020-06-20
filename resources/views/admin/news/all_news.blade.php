@@ -59,7 +59,7 @@
               <td class="col-sm-3" style="text-align: center;">
                     <a href="#" class="btn btn-sm btn-info" title="Edit"><i class="fa fa-edit"></i></a>
                     <a href="{{ URL::to('admin/delete/news/'.$row->id) }}" class="btn btn-sm btn-danger" title="Delete" id="delete"><i class="fa fa-trash"></i></a>
-                    <a href="#" class="btn btn-sm btn-warning" title="View"><i class="fa fa-eye"></i></a>
+                    <a href="{{ URL::to('admin/view/news/'.$row->id) }}" class="btn btn-sm btn-warning" title="View"><i class="fa fa-eye"></i></a>
 
                     @if($row->published == 1)
                       <a href="{{ URL::to('admin/inactive/news/'.$row->id) }}" class="btn btn-sm btn-success" title="Active"><i class="fa fa-thumbs-up"></i></a>

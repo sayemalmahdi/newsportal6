@@ -129,6 +129,19 @@ class NewsController extends Controller
             return Redirect()->back()->with($notification);
             }
     }
+
+    public function ViewNews($id){
+        $news=DB::table('news')
+                ->join('categories','news.cat_id','categories.id')
+                ->join('subcategories','news.subcat_id','subcategories.id')
+                ->join('districts','news.dist_id','districts.id')
+                ->join('subdistricts','news.subdist_id','subdistricts.id')                
+                ->select('news.*','categories.category_name','subcategories.subcategory_name','districts.district_name','subdistricts.subdistrict_name')
+                ->where('news.id',$id)
+                ->first();
+        return view('admin.news.view_news',compact('news'));
+
+    }
     
 
     
