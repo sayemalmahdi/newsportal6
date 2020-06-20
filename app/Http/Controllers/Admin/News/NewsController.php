@@ -113,6 +113,22 @@ class NewsController extends Controller
                     );
          return Redirect()->back()->with($notification);
     }
+
+    public function DeleteNews($id)
+    {
+        $news=DB::table('news')->where('id',$id)->first();
+        $image1=$news->image_one;
+        
+        if ($image1) {
+            unlink($image1);
+            DB::table('news')->where('id',$id)->delete();
+            $notification=array(
+                         'message'=>'Successfully News Deleted ',
+                         'alert-type'=>'success'
+                        );
+            return Redirect()->back()->with($notification);
+            }
+    }
     
 
     

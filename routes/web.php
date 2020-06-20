@@ -60,6 +60,8 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('inactive/news/{id}', 'News\NewsController@Inactive');
 	Route::get('active/news/{id}', 'News\NewsController@Active');
 	
+	Route::get('delete/news/{id}','News\NewsController@DeleteNews');
+
 
 	//get sub cate by ajax
 	Route::get('get/subcategory/{cat_id}','News\NewsController@GetSubcat');

@@ -36,7 +36,7 @@
           <!-- <th class="wd-15p" style="text-align: center;">District Name</th> -->
           <!-- <th class="wd-15p">Sub-District Name</th> -->
           <th class="wd-15p" style="text-align: center;">News Title</th>
-          <th class="wd-15p" style="text-align: center;">Total View</th>
+          <th class="wd-15p" style="text-align: center;">View</th>
           <th class="wd-20p" style="text-align: center;">Action</th>
 	    </tr>
 	  </thead>
@@ -58,7 +58,7 @@
               
               <td class="col-sm-3" style="text-align: center;">
                     <a href="#" class="btn btn-sm btn-info" title="Edit"><i class="fa fa-edit"></i></a>
-                    <a href="#" class="btn btn-sm btn-danger" title="Delete" id="delete"><i class="fa fa-trash"></i></a>
+                    <a href="{{ URL::to('admin/delete/news/'.$row->id) }}" class="btn btn-sm btn-danger" title="Delete" id="delete"><i class="fa fa-trash"></i></a>
                     <a href="#" class="btn btn-sm btn-warning" title="View"><i class="fa fa-eye"></i></a>
 
                     @if($row->published == 1)
