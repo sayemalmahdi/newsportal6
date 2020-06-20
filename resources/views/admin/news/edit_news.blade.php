@@ -44,8 +44,8 @@
 		<div class="col-md-9 col-md-offset-1">
 					<div class="form-three widget-shadow">
 
-						<form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
-            					@csrf
+					<form action="{{ url('admin/update/news/withphoto/'.$news->id) }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+            			@csrf
 
 							<div class="form-group">
 								<label for="exampleFormControlSelect1" class="col-sm-3 control-label">Category</label>
@@ -177,7 +177,7 @@
     								<!-- <lebel>Image One (Main Thumbnail) <span class="tx-danger">*</span></lebel> -->
     								<label class="custom-file">
     									<!-- <input type="text" class="form-control1" id="exampleFormControlInput1" placeholder="Enter the title"> -->
-    								<input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);" required="" accept="image">
+    								<input type="file" id="file" class="custom-file-input" name="image_one" onchange="readURL(this);"  accept="image">
     									<span class="custom-file-control"></span>
     									<input type="hidden" name="old_one" value="{{ $news->image_one }}">
     								<img src="{{ URL::to($news->image_one) }}" style="height: 80px; width: 80px;" id="one" >

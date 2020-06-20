@@ -63,6 +63,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
 	Route::get('delete/news/{id}','News\NewsController@DeleteNews');
 	Route::get('view/news/{id}','News\NewsController@ViewNews');
 	Route::get('edit/news/{id}','News\NewsController@EditNews');
+	Route::post('update/news/withphoto/{id}','News\NewsController@UpdateNewsWithPhoto');
 
 
 	//get sub cate by ajax

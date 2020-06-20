@@ -149,6 +149,71 @@ class NewsController extends Controller
 
         return view('admin.news.edit_news',compact('news'));
     }
+
+    public function UpdateNewsWithPhoto(Request $request,$id)
+    {
+        $old_one=$request->old_one;       
+        $image_one=$request->image_one;
+       
+        $data=array();
+        $data['cat_id']=$request->cat_id;
+        $data['subcat_id']=$request->subcat_id;
+        $data['dist_id']=$request->dist_id;
+        $data['subdist_id']=$request->subdist_id;
+        $data['title']=$request->title;
+        $data['details']=$request->details;
+        $data['video_link']=$request->video_link;
+        $data['tags']=$request->tags;
+        $data['top_section']=$request->top_section;
+        $data['big_thumbnail']=$request->big_thumbnail;
+        $data['small_thumbnail']=$request->small_thumbnail;
+        $data['notice']=$request->notice;
+        $data['published']=$request->published;
+        
+        $update=DB::table('news')->where('id',$id)->update($data);
+
+        // Image One Done
+        if ($request->has('image_one') && $request->has('old_one')) {
+          if ($old_one) {
+            unlink($old_one);
+             $image_one_name= hexdec(uniqid()).'.'.$image_one->getClientOriginalExtension();
+                Image::make($image_one)->save('public/media/news/'.$image_one_name);
+                $data['image_one']='public/media/news/'.$image_one_name;
+                DB::table('news')->where('id',$id)->update($data);
+            $notification=array(
+                     'message'=>'Successfully News Updated',
+                     'alert-type'=>'success'
+                    );
+            return Redirect()->route('admin.all.news')->with($notification);
+           }else{
+            
+                $image_one_name= hexdec(uniqid()).'.'.$image_one->getClientOriginalExtension();
+                Image::make($image_one)->resize(300,300)->save('public/media/news/'.$image_one_name);
+                $data['image_one']='public/media/news/'.$image_one_name;
+                DB::table('news')->where('id',$id)->update($data);
+            $notification=array(
+                     'message'=>'Successfully News Updated',
+                     'alert-type'=>'success'
+                    );
+            return Redirect()->route('admin.all.news')->with($notification);
+           }           
+        }
+
+        if ($update) {
+             $notification=array(
+                     'message'=>'Successfully News Updated',
+                     'alert-type'=>'success'
+                    );
+             return Redirect()->route('admin.all.news')->with($notification);
+
+        }else{
+            $notification=array(
+                     'message'=>'Nothing To Updated ',
+                     'alert-type'=>'error'
+                    );
+             return Redirect()->route('admin.all.news')->with($notification);
+        }
+    }
     
 
     
