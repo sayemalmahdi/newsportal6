@@ -62,9 +62,9 @@
                     <a href="#" class="btn btn-sm btn-warning" title="View"><i class="fa fa-eye"></i></a>
 
                     @if($row->published == 1)
-                      <a href="#" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
+                      <a href="{{ URL::to('admin/inactive/news/'.$row->id) }}" class="btn btn-sm btn-success" title="Active"><i class="fa fa-thumbs-up"></i></a>
                     @else
-                      <a href="#" class="btn btn-sm btn-success" title="Active"><i class="fa fa-thumbs-up"></i></a>
+                      <a href="{{ URL::to('admin/active/news/'.$row->id) }}" class="btn btn-sm btn-danger" title="Inactive"><i class="fa fa-thumbs-down"></i></a>
                     @endif
                     
               </td>

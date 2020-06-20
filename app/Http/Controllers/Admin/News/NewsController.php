@@ -93,6 +93,26 @@ class NewsController extends Controller
         return view('admin.news.all_news',compact('news'));
 
     }
+
+    public function Inactive($id)
+    {
+         DB::table('news')->where('id',$id)->update(['published'=> 0]);
+         $notification=array(
+                     'message'=>'Successfully News Inactive ',
+                     'alert-type'=>'success'
+                    );
+         return Redirect()->back()->with($notification);  
+    }
+
+    public function Active($id)
+    {
+         DB::table('news')->where('id',$id)->update(['published'=> 1]);
+         $notification=array(
+                     'message'=>'Successfully News Aactive ',
+                     'alert-type'=>'success'
+                    );
+         return Redirect()->back()->with($notification);
+    }
     
 
     
