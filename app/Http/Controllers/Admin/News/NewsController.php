@@ -35,8 +35,8 @@ class NewsController extends Controller
         $validatedData = $request->validate([
         'cat_id' => 'required',
         'subcat_id' => 'required',
-        // 'dist_id' => 'required',
-        // 'subdist_id' => 'required',
+        'dist_id' => 'required',
+        'subdist_id' => 'required',
         'title' => 'required',
         'details' => 'required',
         'image_one' => 'required',

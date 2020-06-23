@@ -48,6 +48,9 @@
             @endforeach       
 	  </tbody>
 	</table>
+          <div class="col-md-8 col-md-offset-2">
+              {{ $subcat->links() }}  
+          </div>
 </div>
 <!-- </div> -->
 </div>

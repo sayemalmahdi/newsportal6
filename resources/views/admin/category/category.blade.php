@@ -46,6 +46,9 @@
             @endforeach       
 	  </tbody>
 	</table>
+          <div class="col-md-8 col-md-offset-2">
+              {{ $category->links() }}  
+          </div>
 </div>
 <!-- </div> -->
 </div>

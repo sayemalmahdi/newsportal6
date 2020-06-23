@@ -15,7 +15,10 @@ class CategoryController extends Controller
     }
 
     public function category(){
-    	$category=Category::all();
+    	// $category=Category::all();
+        $category = DB::table('categories')
+                  ->orderBy('id', 'ASC')
+                  ->paginate(10);
     	return view('admin.category.category',compact('category'));
     }
 
@@ -91,7 +94,10 @@ class CategoryController extends Controller
 
 
     public function district(){
-        $district=District::all();
+        // $district=District::all();
+        $district = DB::table('districts')
+                    ->orderBy('id', 'ASC')
+                    ->paginate(10);
         return view('admin.category.district',compact('district'));
     }
 
@@ -166,14 +172,17 @@ class CategoryController extends Controller
         $subcat=DB::table('subcategories')
                ->join('categories','subcategories.category_id','categories.id')
                ->select('subcategories.*','categories.category_name')
-               ->get();
+               ->orderBy('id', 'ASC')
+               // ->get();
+               ->paginate(10);
         return view('admin.category.subcategory',compact('category','subcat'));
     }
 
     public function storesubcat(Request $request){
         $validatedData = $request->validate([
         'category_id' => 'required',
-        'subcategory_name' => 'required|unique:subcategories|max:75',
+        'subcategory_name' => 'required|max:75',
+        // 'subcategory_name' => 'required|unique:subcategories|max:75',
         ]);
 
         $data=array();
@@ -246,14 +255,17 @@ class CategoryController extends Controller
         $subdist=DB::table('subdistricts')
                ->join('districts','subdistricts.district_id','districts.id')
                ->select('subdistricts.*','districts.district_name')
-               ->get();
+               ->orderBy('id', 'ASC')
+               // ->get();
+               ->paginate(10);
         return view('admin.category.subdistrict',compact('district','subdist'));
     }
 
     public function storesubdist(Request $request){
         $validatedData = $request->validate([
         'district_id' => 'required',
-        'subdistrict_name' => 'required|unique:subdistricts|max:75',
+        'subdistrict_name' => 'required|max:75',
+        // 'subdistrict_name' => 'required|unique:subdistricts|max:75',
         ]);
 
         $data=array();
