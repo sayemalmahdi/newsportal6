@@ -153,158 +153,66 @@
 									</ul>
 								</div> <!--End of the Tabmenu 1 -->
 								
-								<div id="tabcontent2" style="display: block;">
-																				<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194155" id="tab_news"> 'মুজিব বর্ষ' উপলক্ষ্যে রূপালী ব্যাংক বন্দরবাজার শাখার বৃক্ষরোপন </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194154" id="tab_news"> জাতীয় শোক দিবসে শহীদ নূর হোসেন ব্লকের রক্তদান কর্মসূচি </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194153" id="tab_news"> আন্ত:বিশ্ববিদ্যালয় ভার্চুয়াল পোস্টার প্রতিযোগিতায় রানার্সআপ শাবি </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194152" id="tab_news"> খাদিমপাড়া ইউনিয়নকে সিটিতে অন্তভূক্ত না করতে স্মারকলিপি প্রদান </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194151" id="tab_news"> দিরাইয়ে বজ্রপাতে প্রাণ গেলো কৃষকের </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194150" id="tab_news"> সৈয়দ হাতিম আলী ‌‘এসএসসি ৯৫ ব্যাচ’র পুর্নমিলনী অনুষ্ঠিত </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194149" id="tab_news"> দোয়ারাবাজারে বিদ্যুতের ভেলকিবাজিতে জনজীবন অতিষ্ঠ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194148" id="tab_news"> ‌'মুজিব শতবর্ষ' উপলক্ষে শাবিতে জনতা ব্যাংকের বৃক্ষরোপন কর্মসূচি </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/moulvibazar/194147" id="tab_news"> কমলগঞ্জে সেচ মেশিন বিতরণ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/moulvibazar/194146" id="tab_news"> জুড়ীতে অসহায় পরিবারকে গৃহ নির্মাণ করে দিল ‘লতিফী হ্যান্ডস বাংলাদেশ’ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194145" id="tab_news"> জাতীয় শোক দিবসে দুস্থদের মাঝে সিলেট জেলা যুবলীগের খাবার বিতরণ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/moulvibazar/194144" id="tab_news"> জুড়ীতে ৫০ টি কীটনাশক স্প্রে মেশিন বিতরণ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194143" id="tab_news"> সুনামগঞ্জে বজ্রপাতে জেলের মৃত্যু </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194142" id="tab_news"> সিলেটে ক্লাস না নিলে শিক্ষকদের চাকুরিচ্যুত করার হুমকি! </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194141" id="tab_news"> দিরাইয়ে ইউপি চেয়ারম্যানের অনিয়ম-দুর্নীতির প্রতিবাদে মানববন্ধন </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194140" id="tab_news"> দোয়ারাবাজারে বিদেশি মদসহ আটক ৩ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194139" id="tab_news"> বঙ্গবীর ওসমানীর ১০২ তম জন্মবার্ষিকীতে দোয়া মাহফিল অনুষ্ঠিত </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194136" id="tab_news"> ফেঞ্চুগঞ্জ উপজেলা মহিলাদলের কমিটিকে খান জামালের অভিনন্দন </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194132" id="tab_news"> ওসমানীনগরে মাদক ব্যবসায়ী কারাগারে </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194131" id="tab_news"> এই বিকেলটা যদি শেষ না হতো.. </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194129" id="tab_news"> সিলেট কেন্দ্রীয় কারাগারের সাবেক ডিআইজির বিরুদ্ধে চার্জশিট গ্রহণ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194126" id="tab_news"> মুজিববর্ষ উপলক্ষে ডিআইজি সিলেটের আয়োজনে বৃক্ষরোপন কর্মসূচি </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194121" id="tab_news"> গোয়াইনঘাটে রিকশাচালকের বস্তাবন্দি লাশ উদ্ধার </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194117" id="tab_news"> সিলেটবাসীকে দুইদিন স্বস্তি দিলো করোনা </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194107" id="tab_news"> সিলেটে কাল থেকে আগের ভাড়ায় গণপরিবহন, মানতে হবে যেসব নির্দেশনা </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194101" id="tab_news"> চার লেন হচ্ছে না সিলেটের সেই সড়ক! </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194099" id="tab_news"> গোলাপগঞ্জে আওয়ামী লীগ নেতা আব্দুল জব্বারের  দাফন সম্পন্ন </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194098" id="tab_news"> সিলেট পাথর  ব্যবসায়ী-শ্রমিক ঐক্য পরিষদের স্মারকলিপি </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194097" id="tab_news"> আলা উদ্দিনের রোগমুক্তি কামনায় দোয়া মহফিল </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194096" id="tab_news"> বিয়ানীবাজারে জেলা ছাত্রলীগ নেতার উদ্যোগে খাদ্য বিতরণ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/moulvibazar/194095" id="tab_news"> বড়লেখায় গাঁজা বিক্রি করেন স্বামী-স্ত্রী, অবশেষে পুলিশের জালে </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194094" id="tab_news"> নিখোঁজ ছাত্রদল নেতা দিনারের বাসায় মহানগর বিএনপির নেতৃবৃন্দ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194093" id="tab_news"> ওসমানীনগরে পবিত্র আশুরা পালিত </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194092" id="tab_news"> রায়খাইল সামাজিক ও সাংস্কৃতিক সংস্থার উদ্যোগে বৃক্ষরোপণ সম্পন্ন </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194091" id="tab_news"> করোনা টেস্ট : শাবির ল্যাবে ২৮২-তে ৮০ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194090" id="tab_news"> ২৪ ঘন্টার শ্বাসরুদ্ধকর অভিযানে ৩ ছিনতাইকারী গ্রেফতার </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194089" id="tab_news"> অভিজ্ঞতা সনদ নকল, শাবি থেকে চাকরি গেলো ইসরাত জাহানের </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194082" id="tab_news"> সিলেটে আরো ৪ চিকিৎসকের শরীরে করোনাভাইরাস শনাক্ত </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/habiganj/194081" id="tab_news"> হবিগঞ্জে নেয়া হচ্ছে না সিআর দত্তের মরদেহ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194080" id="tab_news"> জকিগঞ্জে দরিদ্র বিধবার ঘরে রহস্যজনক চুরি ও ভাঙচুর </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194079" id="tab_news"> আব্দুল জব্বার ছিলেন মাটির মানুষ ও নিবেদিতপ্রাণ রাজনীতিবিদ: শোয়েব </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194074" id="tab_news"> সুনামগঞ্জে ‘মৃত্যুদূত’ বজ্রপাত, ৬ বছরে মৃত্যু শতাধিক! </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194073" id="tab_news"> জগন্নাথপুরে করোনাক্রান্ত ৪ জন হোম আইসোলেশনে </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194072" id="tab_news"> পবিত্র আশুরা উপলক্ষে জগন্নাথপুরে আলোচনা ও দোয়া </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194068" id="tab_news"> যে কোন সময় সিলেট ছাত্রদলের ৩৩ কমিটি! </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194067" id="tab_news"> বঙ্গবন্ধুর শাহাদাতবার্ষিকী উপলক্ষে জল্লারপাড়ে দোয়া </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/moulvibazar/194066" id="tab_news"> প্রবল বর্ষণে ভাসছে বড়লেখা </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/sunamganj/194065" id="tab_news"> জগন্নাথপুরে বজ্রপাতে জেলের মৃত্যু </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194064" id="tab_news"> সিলেটে ছিনতাইয়ের টাকা উদ্ধার, গ্রেফতার ১ </a> 
-											</li>
-																						<li id="tab_news_li"> 
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194060" id="tab_news"> জালালাবাদ রাগীব রাবেয়া মেডিকেল কলেজ পরিদর্শন করেন স্বাস্থ্য শিক্ষা অধিদপ্তরের প্রতিনিধি দল </a> 
-											</li>
-																			</div>
+
+
+
+
+
+
+
+													<!-- 
+														===============================
+														=============================== 
+													-->
+
+													<!-- SYLHET LATEST NEWS START-->
+
+
+													<!-- NEWS SHOW BY DISTRICT -->
+
+
+@php 
+	
+	$dist=DB::table('districts')->skip(1)->first();
+	$district_id=$dist->id;
+	$sylhetLatestNews=DB::table('news')
+			 ->where('dist_id',$district_id)
+			 ->where('published',1)
+			 ->limit(50)
+			 ->orderBy('id','DESC')
+			 ->get();
+@endphp
+
+
+
+			<div id="tabcontent2" style="display: block;">
+
+				@foreach($sylhetLatestNews as $row)
+					<li id="tab_news_li"> 
+						<a href="#" id="tab_news"> 
+							{{ $row->title }} </a> 
+					</li>
+				@endforeach
+																														
+			</div>
+
+
+															<!-- SYLHET LATEST NEWS END-->
+
+
+															<!-- 
+																===============================
+																=============================== 
+															-->
+
+
+
+
+
+
+
+
+
 
 								<div id="tabcontent1" style="display: none;">
 																				<li id="tab_news_li"> 
