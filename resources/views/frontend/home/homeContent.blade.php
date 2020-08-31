@@ -3,23 +3,88 @@
 @section('title','Home Page')
 
 @section('mainContent')
+<!--  Practice 1 Start -->
+<!--  
+@php
+	$featured=DB::table('news')
+			->where('published',1)
+			->orderBy('id','DESC')
+			->first();
+@endphp
+<h1>Only Published</h1>
+<img src="{{asset( $featured->image_one )}}" style="height: 90px;width: 90px;" alt="">
+<span>{{ $featured->id }}</span><br>
+<span>{{ $featured->title }}</span>
+  -->
+<!--  Practice1 End -->
 
+
+
+<!--  Practice 2 Start --> 
+<!-- 
+@php
+	$news=DB::table('news')
+			->where('news.published',1)
+			->where('big_thumbnail',1)
+			->orderBy('id','DESC')
+			
+			->first();					
+@endphp
+<h1>Published And Big Thumbnail</h1>
+<img src="{{asset( $news->image_one )}}" style="height: 90px;width: 90px;" alt="">
+<span>{{ $news->id }}</span><br>
+<span>{{ $news->title }}</span>
+  -->
+<!--  Practice 2 End -->
+
+@php
+	$topSectionBigThumbnailNews=DB::table('news')
+			   			->join('categories','news.cat_id','categories.id')
+			   			->join('subcategories','news.subcat_id','subcategories.id')
+			   			->join('districts','news.dist_id','districts.id')
+			   			->join('subdistricts','news.subdist_id','subdistricts.id')
+						->select('categories.category_name','subcategories.subcategory_name','districts.district_name','subdistricts.subdistrict_name','news.*')
+						->where('news.top_section',1)
+						->where('news.big_thumbnail',1)
+						->where('news.published',1)
+						->orderBy('id','DESC')
+						->limit(1)
+						->first();					
+@endphp
+
+<!-- 
+<h1>topSectionBigThumbnail</h1>
+<img src="{{asset( $topSectionBigThumbnailNews->image_one )}}" style="height: 90px;width: 90px;" alt="">
+<span>{{ $topSectionBigThumbnailNews->id }}</span><br>
+<span>{{ $topSectionBigThumbnailNews->title }}</span><br>
+<span>{{ $topSectionBigThumbnailNews->category_name }}</span><br>
+<span>{{ $topSectionBigThumbnailNews->subcategory_name }}</span><br>
+<span>{{ $topSectionBigThumbnailNews->district_name }}</span><br>
+<span>{{ $topSectionBigThumbnailNews->subdistrict_name }}</span><br>
+<span>{{ $topSectionBigThumbnailNews->tags }}</span><br>
+<span>{{ $topSectionBigThumbnailNews->details }}</span><br>
+<p>{{ $topSectionBigThumbnailNews->video_link }}</p><br>
+  -->
 
 <div id="content_top_most"> 
 				<div id="content_top_most_mid">
 					<div id="content_top_most_mid_float">
 						<div class="div-row">
 							<div class="div-col div-col-5" style="padding-left: 0; width: 410px;">
-																				<img class="lead_img" src="{{ asset('public/frontend/images') }}/194142.jpeg">
+								<!-- <img class="lead_img" src="{{ asset('public/frontend/images') }}/194142.jpeg"> -->
+								<img class="lead_img" src="{{asset( $topSectionBigThumbnailNews->image_one )}}"  alt="">
 											
-											<h1 class="lead_head">
-												<a href="http://www.sylhetview24.net/news/details/Sylhet/194142"> 
-												সিলেটে ক্লাস না নিলে শিক্ষকদের চাকুরিচ্যুত করার হুমকি! </a> 
-											</h1>
+							<h1 class="lead_head">
+								<a href="http://www.sylhetview24.net/news/details/Sylhet/194142"> 
+									{{ $topSectionBigThumbnailNews->title }} </a> 
+							</h1>
 	
-																							<p class="lead_para"> <b>নিজস্ব প্রতিবেদক:</b> সরকারের নির্দেশনা না মেনে 
-অবশেষে আগামীকাল মঙ্গলবার (১ সেপ্টম্বর) থেকে কার্যক্রম শুরু করতে যাচ্ছে&nbsp; সিলেট নগরীর মদিনা মার্কেট এলাকাস্থ
-ব্রিটিশ বাংলাদেশ ইন্টারন্যাশনাল স্কুল অ্যান্ড কলেজ। </p> 							</div>
+								<p class="lead_para"> 
+									<b>নিজস্ব প্রতিবেদক:</b>
+									 {!! Str::limit($topSectionBigThumbnailNews->details,170) !!}
+
+								</p> 							
+							</div>
 							
 							<div class="div-col div-col-4">
 																		<div class="list_separator">
