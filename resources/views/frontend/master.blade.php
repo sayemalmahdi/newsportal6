@@ -6,7 +6,7 @@
 		
 				
 				
-		<title>  Sylhet View 24 - News from Sylhet </title>
+		<title> @yield('title') </title>
 		<meta property="og:type" content="article">
 		<meta property="og:image" content="http://www.sylhetview24.net/images/news/">
 		
