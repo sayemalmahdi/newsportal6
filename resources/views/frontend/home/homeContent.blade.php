@@ -67,62 +67,69 @@
   -->
 
 <div id="content_top_most"> 
-				<div id="content_top_most_mid">
-					<div id="content_top_most_mid_float">
-						<div class="div-row">
-							<div class="div-col div-col-5" style="padding-left: 0; width: 410px;">
-								<!-- <img class="lead_img" src="{{ asset('public/frontend/images') }}/194142.jpeg"> -->
-								<img class="lead_img" src="{{asset( $topSectionBigThumbnailNews->image_one )}}"  alt="">
+	<div id="content_top_most_mid">
+		<div id="content_top_most_mid_float">
+			<div class="div-row">
+				<div class="div-col div-col-5" style="padding-left: 0; width: 410px;">
+					<!-- <img class="lead_img" src="{{ asset('public/frontend/images') }}/194142.jpeg"> -->
+						<img class="lead_img" src="{{asset( $topSectionBigThumbnailNews->image_one )}}"  alt="">
 											
-							<h1 class="lead_head">
-								<a href="http://www.sylhetview24.net/news/details/Sylhet/194142"> 
+						<h1 class="lead_head">
+							<a href="#"> 
 									{{ $topSectionBigThumbnailNews->title }} </a> 
-							</h1>
+						</h1>
 	
-								<p class="lead_para"> 
-									<b>নিজস্ব প্রতিবেদক:</b>
+						<p class="lead_para"> 
+							<b>নিজস্ব প্রতিবেদক:</b>
 									 {!! Str::limit($topSectionBigThumbnailNews->details,170) !!}
+						</p> 							
+				</div>
 
-								</p> 							
-							</div>
+
+@php
+	$topSectionSmallThumbnailNews=DB::table('news')
+			   			->join('categories','news.cat_id','categories.id')
+			   			->join('subcategories','news.subcat_id','subcategories.id')
+			   			->join('districts','news.dist_id','districts.id')
+			   			->join('subdistricts','news.subdist_id','subdistricts.id')
+						->select('categories.category_name','subcategories.subcategory_name','districts.district_name','subdistricts.subdistrict_name','news.*')
+						->where('news.top_section',1)
+						->where('news.small_thumbnail',1)
+						->where('news.published',1)
+						->orderBy('id','DESC')
+						->limit(5)
+						->get();					
+@endphp
+
 							
-							<div class="div-col div-col-4">
-																		<div class="list_separator">
-																							<img style="width: 35%; display: block;" class="list_img lazy" src="{{ asset('public/frontend/images') }}/194151.gif">
-											
-											<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
-												<h1 style="margin: 0;"> <a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" href="http://www.sylhetview24.net/news/details/sunamganj/194151"> দিরাইয়ে বজ্রপাতে প্রাণ গেলো কৃষকের </a> </h1>
-											</div>
-										</div>
-																				<div class="list_separator">
-																							<img style="width: 35%; display: block;" class="list_img lazy" src="{{ asset('public/frontend/images') }}/194149.gif">
-											
-											<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
-												<h1 style="margin: 0;"> <a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" href="http://www.sylhetview24.net/news/details/sunamganj/194149"> দোয়ারাবাজারে বিদ্যুতের ভেলকিবাজিতে জনজীবন অতিষ্ঠ </a> </h1>
-											</div>
-										</div>
-																				<div class="list_separator">
-																							<img style="width: 35%; display: block;" class="list_img lazy" src="{{ asset('public/frontend/images') }}/194131.jpeg">
-											
-											<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
-												<h1 style="margin: 0;"> <a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" href="http://www.sylhetview24.net/news/details/Sylhet/194131"> এই বিকেলটা যদি শেষ না হতো.. </a> </h1>
-											</div>
-										</div>
-																				<div class="list_separator">
-																							<img style="width: 35%; display: block;" class="list_img lazy" src="{{ asset('public/frontend/images') }}/194129.jpeg">
-											
-											<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
-												<h1 style="margin: 0;"> <a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" href="http://www.sylhetview24.net/news/details/Sylhet/194129"> সিলেট কেন্দ্রীয় কারাগারের সাবেক ডিআইজির বিরুদ্ধে চার্জশিট গ্রহণ </a> </h1>
-											</div>
-										</div>
-																				<div class="list_separator">
-																							<img style="width: 35%; display: block;" class="list_img lazy" src="{{ asset('public/frontend/images') }}/194121.jpeg">
-											
-											<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
-												<h1 style="margin: 0;"> <a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" href="http://www.sylhetview24.net/news/details/Sylhet/194121"> গোয়াইনঘাটে রিকশাচালকের বস্তাবন্দি লাশ উদ্ধার </a> </h1>
-											</div>
-										</div>
-																	</div>
+		<div class="div-col div-col-4">
+
+			@foreach($topSectionSmallThumbnailNews as $row)
+
+				<div class="list_separator">
+					<img style="width: 35%; display: block;" class="list_img lazy" src="{{asset( $row->image_one )}}">
+												
+						<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
+							<h1 style="margin: 0;"> 
+								<a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" 
+								href="#"> {{ $row->title }} </a> </h1>
+						</div>
+				</div>
+
+			@endforeach
+																			
+		</div>
+
+
+
+
+					<!-- =================================
+					================================= -->
+
+
+
+
+
 							
 							<div class="div-col div-col-3" style="float: right; padding: 0; width: 240px; border: 1px solid #DDD;">							
 								<!--<div align='center'><img src='http://www.sylhetview24.net/images/mujib.png' style='width: 120px;'/> </div> --->
