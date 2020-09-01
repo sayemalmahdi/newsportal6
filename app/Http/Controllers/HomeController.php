@@ -39,5 +39,19 @@ class HomeController extends Controller
         return view('frontend.home.single_page_view_news',compact('news'));
     }
 
+    public function NewsPrint($id,$category_name,$title){
+        $printnews=DB::table('news')
+                ->join('categories','news.cat_id','categories.id')
+                ->join('subcategories','news.subcat_id','subcategories.id')
+                ->join('districts','news.dist_id','districts.id')
+                ->join('subdistricts','news.subdist_id','subdistricts.id')                
+                ->select('news.*','categories.category_name','subcategories.subcategory_name','districts.district_name','subdistricts.subdistrict_name')
+                ->where('news.id',$id)
+                ->first();
+        return view('frontend.home.single_page_print',compact('printnews'));
+    }
+
+    
+
 
 }

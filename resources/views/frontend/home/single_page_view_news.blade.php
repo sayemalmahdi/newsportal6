@@ -99,16 +99,18 @@
 					<span style="color:#787878" ;="">সিলেটভিউ টুয়েন্টিফোর ডটকম, ২০২০-০৯-০১ ০০:১১:৪২ </span>
 												
 						<span id="print_icon"> 
-							<a target="_blank" title="Print Now" href="#"> 
-								<i class="fa fa-print" aria-hidden="true"></i> 
+							<a target="_blank" title="Print Now" href="{{ url('news/print/'.$news->id.'/'.$news->category_name.'/'.$news->title) }}"> 
+								<!-- <i class="fa fa-print" aria-hidden="true"></i>  -->
+								<img style="height: 28px;" src="{{ asset('public/frontend/images') }}/printer1.png" alt="OasisHospitals"> 
 							</a> 
+							
 						</span>
 					</p>
 				</div> <!-- END OF CLASS PAGE_SOURCE_INFO -->
 				
 				<div class="inner_img">
 					<div align="center">
-						<img style="width: 95%; float: none; height: 400px; display: block; " class="list_img lazy"  src="{{ asset($news->image_one) }}" title="{{ asset($news->title) }}">  
+						<img style="width: 95%; float: none; height: 400px; display: block; " class="list_img lazy"  src="{{ asset($news->image_one) }}" title="{{ ($news->title) }}">  
 						
 					</div>
 					<br>
@@ -300,9 +302,11 @@
 			@foreach($latestNews as $row)
 				<li> 
 					<a href="{{ url('news/details/'.$row->id.'/'.$row->category_name.'/'.$row->title) }}"> 
-						<i class="fa fa-hand-o-right"></i>
-							&nbsp;&nbsp;{{ $row->title }}
+						<!-- <i class="fa fa-hand-o-right"></i> -->
+						<img style="height: 17px;" src="{{ asset('public/frontend/images') }}/16084.png" alt="OasisHospitals"> 
+							{{ $row->title }}
 					</a> 
+					
 				</li> 
 			@endforeach				
 	</div> <!-- End of CLASS RIGHT_PART_INNER -->
@@ -369,8 +373,9 @@
 		@foreach($sylhetLatestNews as $row)
 		<li> 
 		 	<a href="{{ url('news/details/'.$row->id.'/'.$row->category_name.'/'.$row->title) }}"> 
-			 	<i class="fa fa-check-square-o"></i>  
-			 		&nbsp;&nbsp; {{ $row->title }} 
+			 	<!-- <i class="fa fa-check-square-o"></i> -->  
+			 	<img style="height: 17px;" src="{{ asset('public/frontend/images') }}/16084.png" alt="OasisHospitals"> 
+			 		 {{ $row->title }} 
 		 	</a> 
 		</li>
 		@endforeach

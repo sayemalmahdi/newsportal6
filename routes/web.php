@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/news/details/{id}/{category_name}/{title}','HomeController@NewsDetails');
+Route::get('/news/print/{id}/{category_name}/{title}','HomeController@NewsPrint');
 
 
 //Admin Route

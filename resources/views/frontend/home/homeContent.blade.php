@@ -73,7 +73,7 @@
 				<div class="div-col div-col-5" style="padding-left: 0; width: 410px;">
 					<!-- <img class="lead_img" src="{{ asset('public/frontend/images') }}/194142.jpeg"> -->
 					<a href="{{ url('news/details/'.$topSectionBigThumbnailNews->id.'/'.$topSectionBigThumbnailNews->category_name.'/'.$topSectionBigThumbnailNews->title) }}">
-						<img class="lead_img" src="{{asset( $topSectionBigThumbnailNews->image_one )}}"  alt="">
+						<img class="lead_img" src="{{asset( $topSectionBigThumbnailNews->image_one )}}"  alt="" title="{{( $topSectionBigThumbnailNews->title )}}">
 					</a>			
 						<h1 class="lead_head">
 							<a href="{{ url('news/details/'.$topSectionBigThumbnailNews->id.'/'.$topSectionBigThumbnailNews->category_name.'/'.$topSectionBigThumbnailNews->title) }}"> 
@@ -114,8 +114,8 @@
 													
 						<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
 							<h1 style="margin: 0;"> 
-								<a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" 
-								href="{{ url('news/details/'.$row->id.'/'.$row->category_name.'/'.$row->title) }}"> {{ $row->title }} </a> </h1>
+								<a style="font-size: 14px; font-weight: normal; height: auto; line-height: 21px;" 
+								href="{{ url('news/details/'.$row->id.'/'.$row->category_name.'/'.$row->title) }}"> {!! Str::limit($row->title,75) !!} </a> </h1>
 						</div>
 				</div>
 

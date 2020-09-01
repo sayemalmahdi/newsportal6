@@ -1114,7 +1114,7 @@ background-color:#FFFFFF;
 								float:left;
 								margin:0px;
 								list-style:none;
-								font-size:16px;
+								font-size:14px;
 								line-height:23px;
 								color:#484848;
 								padding:5px 15px;
@@ -3310,7 +3310,18 @@ background-color:#FFFFFF;
 			}
 			
 		#print_icon a{
-		float: right; background: #F7941F; padding: 3px 15px; color: #FFF; border-radius: 15px; height: 20px; line-height: 20px;transition: 0.6s ease; text-decoration: none; margin-right: 10px;
+		float: right; 
+		background: #F7941F; 
+		/* padding: 3px 15px; */ 
+		
+		/* border-radius: 15px; */ 
+		color: #FFF; 
+		height: 27px; 
+		line-height: 20px;
+		transition: 0.6s ease; 
+		text-decoration: none; 
+		margin-right: 10px;
+		border-radius: 50%;
 		}
 			#print_icon a:hover{
 			background: #1B59A3;
