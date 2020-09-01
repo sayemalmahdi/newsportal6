@@ -21,6 +21,7 @@ Route::get('/','Frontend\HomeController@index');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/news/details/{id}/{category_name}/{title}','HomeController@NewsDetails');
 
 
 //Admin Route

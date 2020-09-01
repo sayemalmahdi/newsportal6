@@ -72,10 +72,11 @@
 			<div class="div-row">
 				<div class="div-col div-col-5" style="padding-left: 0; width: 410px;">
 					<!-- <img class="lead_img" src="{{ asset('public/frontend/images') }}/194142.jpeg"> -->
+					<a href="{{ url('news/details/'.$topSectionBigThumbnailNews->id.'/'.$topSectionBigThumbnailNews->category_name.'/'.$topSectionBigThumbnailNews->title) }}">
 						<img class="lead_img" src="{{asset( $topSectionBigThumbnailNews->image_one )}}"  alt="">
-											
+					</a>			
 						<h1 class="lead_head">
-							<a href="#"> 
+							<a href="{{ url('news/details/'.$topSectionBigThumbnailNews->id.'/'.$topSectionBigThumbnailNews->category_name.'/'.$topSectionBigThumbnailNews->title) }}"> 
 									{{ $topSectionBigThumbnailNews->title }} </a> 
 						</h1>
 	
@@ -107,12 +108,14 @@
 			@foreach($topSectionSmallThumbnailNews as $row)
 
 				<div class="list_separator">
-					<img style="width: 35%; display: block;" class="list_img lazy" src="{{asset( $row->image_one )}}">
-												
+					<a href="{{ url('news/details/'.$row->id.'/'.$row->category_name.'/'.$row->title) }}">
+						<img style="width: 35%; display: block;" class="list_img lazy" src="{{asset( $row->image_one )}}">
+					</a>
+													
 						<div class="list_info" style="width: 63%; height: auto; min-height: 60px; max-height: 76px;">
 							<h1 style="margin: 0;"> 
 								<a style="font-size: 16px; font-weight: normal; height: auto; line-height: 21px;" 
-								href="#"> {{ $row->title }} </a> </h1>
+								href="{{ url('news/details/'.$row->id.'/'.$row->category_name.'/'.$row->title) }}"> {{ $row->title }} </a> </h1>
 						</div>
 				</div>
 
@@ -176,6 +179,11 @@
 	$dist=DB::table('districts')->skip(1)->first();
 	$district_id=$dist->id;
 	$sylhetLatestNews=DB::table('news')
+			->join('categories','news.cat_id','categories.id')
+			->join('subcategories','news.subcat_id','subcategories.id')
+			->join('districts','news.dist_id','districts.id')
+			->join('subdistricts','news.subdist_id','subdistricts.id')
+			->select('categories.category_name','subcategories.subcategory_name','districts.district_name','subdistricts.subdistrict_name','news.*')
 			 ->where('dist_id',$district_id)
 			 ->where('published',1)
 			 ->limit(50)
@@ -189,7 +197,7 @@
 
 				@foreach($sylhetLatestNews as $row)
 					<li id="tab_news_li"> 
-						<a href="#" id="tab_news"> 
+						<a href="{{ url('news/details/'.$row->id.'/'.$row->category_name.'/'.$row->title) }}" id="tab_news"> 
 							{{ $row->title }} </a> 
 					</li>
 				@endforeach

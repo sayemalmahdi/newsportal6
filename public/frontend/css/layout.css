@@ -990,7 +990,7 @@ background-color:#FFFFFF;
 							}
 						
 								.inner_img img{
-								margin:10px 0px 5px 0px;
+								margin:10px 0px -10px 0px;
 								max-width:590px;
 								height:auto;
 								border:none;
@@ -3190,7 +3190,9 @@ background-color:#FFFFFF;
 			}
 
 			.list_img{
-			float:left; height: 60px; width: 30%; /* width: 90px;  */ transition: 0.6s ease;
+			float:left; 
+			height: 60px; 
+			width: 30%; /* width: 90px;  */ transition: 0.6s ease;
 			}
 				.list_img:hover{
 				opacity: 0.9;
